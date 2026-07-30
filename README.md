@@ -54,10 +54,12 @@ FLEURS is used as an open, real-human Mandarin speech corpus with reference tran
 - ASR errors are not random: code-switching, numbers, and long clauses are common failure modes.
 - Human labels and normalized metrics (WER/CER) are necessary to interpret model output responsibly.
 
-## Demos
+## Portfolio & Application
 
-- [Speech Annotation Demo](./speech-annotation-demo/)
-- [AI Speech Evaluation Demo](./ai-speech-evaluation-demo/)
+- **Speech annotation project:** [speech-annotation-demo](./speech-annotation-demo/)
+- **ASR evaluation:** [ai-speech-evaluation-demo](./ai-speech-evaluation-demo/)
+- **SpaceXAI application materials:** [application](./application/)
+- **Voice recording guide:** [voice-samples](./voice-samples/)
 
 ## Author
 

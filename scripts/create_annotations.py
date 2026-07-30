@@ -82,6 +82,40 @@ REVIEW_NOTES: dict[str, dict[str, str]] = {
 }
 
 
+PROSODY_NOTES: dict[str, dict[str, str]] = {
+    "fleurs_zh_004": {
+        "intonation": "declarative_flat_news_style",
+        "speech_rate": "moderate_fast",
+        "emotion_tone": "neutral_formal",
+        "prosody_notes": "Long political sentence delivered in one flowing breath group with minor pauses at clause boundaries.",
+    },
+    "fleurs_zh_007": {
+        "intonation": "declarative",
+        "speech_rate": "normal",
+        "emotion_tone": "neutral",
+        "prosody_notes": "Brief pause before English loanword 'wifi'; loanword spoken with slightly flatter stress.",
+    },
+    "fleurs_zh_010": {
+        "intonation": "declarative_with_clause_boundaries",
+        "speech_rate": "normal",
+        "emotion_tone": "neutral_descriptive",
+        "prosody_notes": "Three descriptive clauses; light rhythmic pauses between clauses without full stops.",
+    },
+    "fleurs_zh_011": {
+        "intonation": "declarative_cut_off",
+        "speech_rate": "normal",
+        "emotion_tone": "neutral",
+        "prosody_notes": "Sentence ends abruptly mid-phrase; final syllables do not form a complete semantic unit.",
+    },
+    "fleurs_zh_018": {
+        "intonation": "declarative_complex",
+        "speech_rate": "moderate",
+        "emotion_tone": "neutral_news",
+        "prosody_notes": "Multiple clauses about sports events; slight emphasis on numeric distances (100米, 200米).",
+    },
+}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -109,6 +143,10 @@ def main() -> None:
         "noise_level",
         "accent_notes",
         "pause_notes",
+        "intonation",
+        "speech_rate",
+        "emotion_tone",
+        "prosody_notes",
         "annotation_confidence",
         "reviewer_notes",
     ]
@@ -117,6 +155,7 @@ def main() -> None:
     for item in manifest:
         clip_id = item["id"]
         overrides = REVIEW_NOTES.get(clip_id, {})
+        prosody = PROSODY_NOTES.get(clip_id, {})
         rows.append(
             {
                 "id": clip_id,
@@ -128,6 +167,10 @@ def main() -> None:
                 "noise_level": overrides.get("noise_level", "low"),
                 "accent_notes": overrides.get("accent_notes", "standard_mandarin"),
                 "pause_notes": overrides.get("pause_notes", "natural_phrasing"),
+                "intonation": prosody.get("intonation", ""),
+                "speech_rate": prosody.get("speech_rate", ""),
+                "emotion_tone": prosody.get("emotion_tone", ""),
+                "prosody_notes": prosody.get("prosody_notes", ""),
                 "annotation_confidence": overrides.get("annotation_confidence", "high"),
                 "reviewer_notes": overrides.get(
                     "reviewer_notes",

@@ -58,7 +58,17 @@ Record pause behavior in `pause_notes`, e.g.:
 
 Do not insert `[pause]` tokens unless a downstream spec requires them.
 
-## 6. Confidence levels
+## 6. Prosody (selected clips)
+
+For advanced annotation, selected clips include:
+- `intonation` — e.g. declarative, cut-off, news style
+- `speech_rate` — normal / moderate / fast
+- `emotion_tone` — neutral, descriptive, formal
+- `prosody_notes` — free-text rhythm/stress observations
+
+Example (`fleurs_zh_007`): brief pause before English loanword `wifi`, flatter stress on loanword.
+
+## 7. Confidence levels
 
 | Level | Meaning |
 |---|---|
