@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+*.egg-info/
+dist/
+build/
+.cache/
+*.log
+
+# Large model caches (re-downloadable)
+~/.cache/whisper/

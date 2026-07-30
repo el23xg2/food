@@ -1,0 +1,18 @@
+{
+  "model": "base",
+  "language": "zh",
+  "num_clips": 30,
+  "avg_wer": 0.9,
+  "avg_cer": 0.1407,
+  "median_cer": 0.103,
+  "error_type_counts": {
+    "correct": 3,
+    "substitution_homophone_likely": 18,
+    "insertion": 3,
+    "deletion": 6,
+    "accent_or_noise_impact": 1
+  },
+  "clips_with_cer_gt_0.2": 10,
+  "clips_with_cer_eq_0": 3,
+  "notes": "Chinese evaluation uses CER as primary metric; text normalized to simplified Chinese."
+}
