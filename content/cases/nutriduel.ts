@@ -100,7 +100,52 @@ const nutriduel: CaseStudy = {
       "如果商业化，我会先做 PvE 模式降低匹配成本，用关卡设计替代纯 PvP 平衡的压力。",
     ],
   },
-  links: [{ label: "GitHub", url: "https://github.com/el23xg2" }],
+  links: [
+    { label: "GitHub", url: "https://github.com/el23xg2/nutriduel" },
+    {
+      label: "GDD 全文",
+      url: "https://github.com/el23xg2/nutriduel/blob/main/GAME_DESIGN_PRD.md",
+    },
+  ],
+  media: {
+    productImages: [
+      {
+        src: "/images/cases/nutriduel/gdd-toc.png",
+        alt: "NutriDuel GDD table of contents",
+        caption: "GDD 目录 — v8.3 · 5056 行单一权威设计规范，A–W 节覆盖全部机制与数值",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-core-loop.png",
+        alt: "NutriDuel core gameplay loop rules",
+        caption: "核心玩法循环 — 三层渐进规则：血糖驱动回合制策略，教程分阶段解锁",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-turn-structure.png",
+        alt: "NutriDuel turn structure diagram",
+        caption: "回合结构 — 苏醒 → 摸牌 → 行动 → 代谢 → 结束，五阶段精确结算",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-nutrition-mapping.png",
+        alt: "Card strength value formula and cost targets",
+        caption: "数值基准 — CSV = ATK×2 + HP + ARM×1.5，COST 决定数值预算",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-rarity-system.png",
+        alt: "Rarity system and nutrition to stats mapping",
+        caption: "营养映射 — 现实营养密度 → ★稀有度 → 游戏技能；COST 与 ★ 正交设计",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-character-system.png",
+        alt: "Character card system and archetypes",
+        caption: "角色卡体系 — 11 张饮食流派角色，构筑策略核心（vs 方案卡战术层）",
+      },
+      {
+        src: "/images/cases/nutriduel/gdd-balance-params.png",
+        alt: "Balance parameters and design constraints",
+        caption: "平衡性参数 — 全卡池数值上限、已知风险监控、设计禁则",
+      },
+    ],
+  },
 };
 
 export default nutriduel;
