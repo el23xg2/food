@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #09090b;
+  --color-surface: #111113;
+  --color-surface-elevated: #18181b;
+  --color-border: #27272a;
+  --color-border-subtle: #1f1f23;
+  --color-foreground: #fafafa;
+  --color-muted: #a1a1aa;
+  --color-subtle: #71717a;
+  --color-accent: #34d399;
+  --color-accent-muted: #10b981;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    animation: fade-up 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+
+  .page-transition {
+    animation: page-enter 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+
+  ::view-transition-old(root) {
+    animation: page-exit 0.3s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: page-enter 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  color: var(--color-foreground);
+}
+
+.prose-case p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  font-size: 1.0625rem;
+}
+
+.prose-case p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-case ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.prose-case li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+.prose-case li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
