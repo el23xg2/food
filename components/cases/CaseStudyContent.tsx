@@ -5,6 +5,8 @@ import type { CaseStudy, CaseStudySection } from "@/types/case-study";
 import { CASE_SECTIONS } from "@/types/case-study";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Tag } from "@/components/ui/Tag";
+import { CaseStudyGallery } from "@/components/cases/CaseStudyGallery";
+import { ProductHuntCard } from "@/components/cases/ProductHuntCard";
 import { formatCaseNumber } from "@/lib/cases";
 
 interface CaseStudyContentProps {
@@ -93,7 +95,27 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
         )}
       </div>
     ),
-    outcome: <SectionContent section={caseStudy.outcome} />,
+    outcome: (
+      <div>
+        <SectionContent section={caseStudy.outcome} />
+        {caseStudy.productHunt && (
+          <ProductHuntCard
+            tagline={caseStudy.productHunt.tagline}
+            description={caseStudy.productHunt.description}
+            launchDate={caseStudy.productHunt.launchDate}
+            upvotes={caseStudy.productHunt.upvotes}
+            comments={caseStudy.productHunt.comments}
+            followers={caseStudy.productHunt.followers}
+            pricing={caseStudy.productHunt.pricing}
+            tags={caseStudy.productHunt.tags}
+            link={caseStudy.productHunt.url}
+          />
+        )}
+        {caseStudy.media?.images && (
+          <CaseStudyGallery images={caseStudy.media.images} />
+        )}
+      </div>
+    ),
     reflection: <SectionContent section={caseStudy.reflection} />,
   };
 

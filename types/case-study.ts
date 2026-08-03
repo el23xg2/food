@@ -3,6 +3,34 @@ export interface CaseStudyLink {
   url: string;
 }
 
+export interface CaseStudyImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface CaseStudyHighlight {
+  label: string;
+  value: string;
+}
+
+export interface CaseStudyMedia {
+  images?: CaseStudyImage[];
+  highlights?: CaseStudyHighlight[];
+}
+
+export interface ProductHuntLaunch {
+  tagline: string;
+  description: string;
+  launchDate: string;
+  upvotes: number;
+  comments: number;
+  followers: number;
+  pricing: string;
+  tags: string[];
+  url: string;
+}
+
 export interface AIWorkflowRow {
   phase: string;
   myWork: string;
@@ -41,6 +69,8 @@ export interface CaseStudy {
   outcome: CaseStudySection;
   reflection: CaseStudySection;
   links?: CaseStudyLink[];
+  media?: CaseStudyMedia;
+  productHunt?: ProductHuntLaunch;
 }
 
 export const CASE_SECTIONS = [

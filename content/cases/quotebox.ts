@@ -10,8 +10,8 @@ const quotebox: CaseStudy = {
   readTime: "10 min",
   status: "Live Product",
   role: "产品负责人 · 独立交付",
-  timeline: "2024",
-  keyOutcome: "独立上线 quotebox.pro，完成 Product Hunt 发布",
+  timeline: "2025 – July 2026",
+  keyOutcome: "独立上线 quotebox.pro，完成 Product Hunt 发布（6 upvotes）",
   overview:
     "面向海外自由职业者的一站式报价、合同、电子签名与发票 SaaS。从市场调研、产品定位到支付接入、SEO 与部署上线，由我一个人完成全部产品工作，开发全程使用 Cursor（Claude 模型）。",
   why: {
@@ -90,14 +90,16 @@ const quotebox: CaseStudy = {
   },
   outcome: {
     paragraphs: [
-      "quotebox.pro 已上线并可访问，完成 Stripe 支付接入与 Product Hunt 发布。",
-      "局限：作为个人项目，尚未积累大规模用户数据与留存指标。",
+      "quotebox.pro 已上线并可访问，完成 Stripe 支付接入，并于 2026 年 7 月 22 日在 Product Hunt 正式发布。",
+      "Product Hunt 定位为「The simplest HoneyBook alternative for freelancers」—— 轻量定价 $9/月，提供免费套餐，核心链路覆盖报价、合同、电子签名与发票。",
+      "局限：作为个人项目，尚处于早期验证阶段，用户规模与留存数据仍在积累中。",
     ],
     bullets: [
       "产品地址：https://quotebox.pro",
-      "完成核心链路：报价 → 合同 → 签名 → 发票",
-      "Product Hunt 发布",
-      "SEO 基础架构搭建完成",
+      "Product Hunt 发布：6 upvotes · 8 comments · 11 followers",
+      "完成核心链路：Quote → Service Agreement → E-Signature → Invoice",
+      "定价策略：$9/月，Free plan available",
+      "标签：Productivity · Freelance · SaaS",
     ],
   },
   reflection: {
@@ -108,8 +110,35 @@ const quotebox: CaseStudy = {
   },
   links: [
     { label: "quotebox.pro", url: "https://quotebox.pro" },
+    { label: "Product Hunt", url: "https://www.producthunt.com/products/quotebox" },
     { label: "GitHub", url: "https://github.com/el23xg2" },
   ],
+  productHunt: {
+    tagline: "Quotes, contracts & invoices for freelancers",
+    description:
+      "The simplest HoneyBook alternative for freelancers. Send professional quotes, get contracts signed online with e-signatures, and accept payments — all for $9/month. Free plan available.",
+    launchDate: "Launched July 22, 2026 on Product Hunt",
+    upvotes: 6,
+    comments: 8,
+    followers: 11,
+    pricing: "$9/month · Free plan available",
+    tags: ["Productivity", "Freelance", "SaaS"],
+    url: "https://www.producthunt.com/products/quotebox",
+  },
+  media: {
+    images: [
+      {
+        src: "/images/cases/quotebox/ph-product-page.png",
+        alt: "QuoteBox Product Hunt product page",
+        caption: "Product Hunt 产品页 — 展示定位、定价与核心功能",
+      },
+      {
+        src: "/images/cases/quotebox/ph-launch-detail.png",
+        alt: "QuoteBox Product Hunt launch detail with product screenshots",
+        caption: "Launch 详情 — Quote、Service Agreement、Invoice 核心界面预览",
+      },
+    ],
+  },
 };
 
 export default quotebox;
