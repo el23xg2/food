@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://portfolio.vercel.app",
   ogImage: "/og.png",
   author: "高雪怿",
-  role: "AI Native Product Manager",
+  role: "AI Native Product Manager / AI Native Builder",
   email: "contact@example.com",
   github: "https://github.com/el23xg2",
   links: {
