@@ -1,40 +1,29 @@
-"use client";
-
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 interface FadeInProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "none";
+  /** Skip animation for above-the-fold critical content */
+  instant?: boolean;
 }
 
 export function FadeIn({
   children,
   className = "",
   delay = 0,
-  direction = "up",
+  instant = false,
 }: FadeInProps) {
+  if (instant) {
+    return <div className={className}>{children}</div>;
+  }
+
+  const style: CSSProperties | undefined =
+    delay > 0 ? { animationDelay: `${delay}s` } : undefined;
+
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: direction === "up" ? 24 : 0,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.6,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
-      }}
-      className={className}
-    >
+    <div className={`animate-fade-up ${className}`} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }

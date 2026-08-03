@@ -15,6 +15,23 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    animation: fade-up 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

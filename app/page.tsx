@@ -14,30 +14,28 @@ export default function HomePage() {
       {/* Prelude */}
       <section className="flex min-h-[85vh] items-center">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <FadeIn>
-            <p className="text-sm uppercase tracking-[0.2em] text-subtle">
-              {siteConfig.title}
-            </p>
-            <h1 className="mt-6 text-4xl font-medium tracking-tight text-foreground md:text-6xl">
-              {siteConfig.name}
-            </h1>
-            <p className="mt-4 text-xl text-muted md:text-2xl">
-              {siteConfig.role}
-            </p>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              记录产品决策过程。
-              <br />
-              从问题定义到可运行的产品。
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/cases"
-                className="inline-flex items-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
-              >
-                进入 Case Studies →
-              </Link>
-            </div>
-          </FadeIn>
+          <p className="text-sm uppercase tracking-[0.2em] text-subtle">
+            {siteConfig.title}
+          </p>
+          <h1 className="mt-6 text-4xl font-medium tracking-tight text-foreground md:text-6xl">
+            {siteConfig.name}
+          </h1>
+          <p className="mt-4 text-xl text-muted md:text-2xl">
+            {siteConfig.role}
+          </p>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            记录产品决策过程。
+            <br />
+            从问题定义到可运行的产品。
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/cases"
+              className="inline-flex items-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            >
+              进入 Case Studies →
+            </Link>
+          </div>
         </div>
       </section>
 
