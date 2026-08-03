@@ -6,6 +6,7 @@ import type { CaseStudyImage } from "@/types/case-study";
 
 interface CaseStudyGalleryProps {
   images: CaseStudyImage[];
+  title?: string;
 }
 
 function GalleryImage({ image }: { image: CaseStudyImage }) {
@@ -19,8 +20,8 @@ function GalleryImage({ image }: { image: CaseStudyImage }) {
         <Image
           src={image.src}
           alt={image.alt}
-          width={1225}
-          height={3733}
+          width={1440}
+          height={900}
           className="h-auto w-full"
           sizes="(max-width: 768px) 100vw, 720px"
           onError={() => setHasError(true)}
@@ -35,14 +36,21 @@ function GalleryImage({ image }: { image: CaseStudyImage }) {
   );
 }
 
-export function CaseStudyGallery({ images }: CaseStudyGalleryProps) {
+export function CaseStudyGallery({ images, title }: CaseStudyGalleryProps) {
   if (!images.length) return null;
 
   return (
-    <div className="mt-10 space-y-8">
-      {images.map((image) => (
-        <GalleryImage key={image.src} image={image} />
-      ))}
+    <div className="mt-10">
+      {title && (
+        <p className="mb-6 text-xs uppercase tracking-[0.2em] text-subtle">
+          {title}
+        </p>
+      )}
+      <div className="space-y-8">
+        {images.map((image) => (
+          <GalleryImage key={image.src} image={image} />
+        ))}
+      </div>
     </div>
   );
 }

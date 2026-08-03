@@ -126,6 +126,33 @@ const quotebox: CaseStudy = {
     url: "https://www.producthunt.com/products/quotebox",
   },
   media: {
+    productImages: [
+      {
+        src: "/images/cases/quotebox/product-landing.png",
+        alt: "QuoteBox landing page with pricing comparison",
+        caption: "Landing Page — $9/月定位，对比 HoneyBook $36/月",
+      },
+      {
+        src: "/images/cases/quotebox/product-dashboard.png",
+        alt: "QuoteBox dashboard",
+        caption: "Dashboard — 客户、报价、合同、发票一站式管理",
+      },
+      {
+        src: "/images/cases/quotebox/product-quote.png",
+        alt: "QuoteBox client quote page",
+        caption: "Quote — 客户侧报价单，一键 Accept Quote",
+      },
+      {
+        src: "/images/cases/quotebox/product-contract.png",
+        alt: "QuoteBox service agreement",
+        caption: "Contract — 从报价自动生成的 Service Agreement",
+      },
+      {
+        src: "/images/cases/quotebox/product-invoice.png",
+        alt: "QuoteBox invoice with payment",
+        caption: "Invoice — 在线支付，完成交易闭环",
+      },
+    ],
     images: [
       {
         src: "/images/cases/quotebox/ph-product-page.png",

@@ -16,6 +16,7 @@ export interface CaseStudyHighlight {
 
 export interface CaseStudyMedia {
   images?: CaseStudyImage[];
+  productImages?: CaseStudyImage[];
   highlights?: CaseStudyHighlight[];
 }
 
