@@ -7,7 +7,7 @@ export const siteConfig = {
   ogImage: "/og.png",
   author: "高雪怿",
   role: "AI Native Product Manager / AI Native Builder",
-  email: "contact@example.com",
+  email: "19953379091@163.com",
   github: "https://github.com/el23xg2",
   links: {
     github: "https://github.com/el23xg2",
