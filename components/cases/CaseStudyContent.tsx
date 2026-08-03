@@ -60,17 +60,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
     why: <SectionContent section={caseStudy.why} />,
     problem: <SectionContent section={caseStudy.problem} />,
     opportunity: <SectionContent section={caseStudy.opportunity} />,
-    solution: (
-      <div>
-        <SectionContent section={caseStudy.solution} />
-        {caseStudy.media?.productImages && (
-          <CaseStudyGallery
-            title="Product Screenshots"
-            images={caseStudy.media.productImages}
-          />
-        )}
-      </div>
-    ),
+    solution: <SectionContent section={caseStudy.solution} />,
     aiWorkflow: (
       <div>
         <div className="prose-case">
@@ -171,6 +161,13 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
           <p className="mt-10 max-w-3xl text-base leading-relaxed text-muted">
             {caseStudy.overview}
           </p>
+
+          {caseStudy.media?.productImages && caseStudy.media.productImages.length > 0 && (
+            <CaseStudyGallery
+              title="Product Screenshots"
+              images={caseStudy.media.productImages}
+            />
+          )}
 
           {caseStudy.links && caseStudy.links.length > 0 && (
             <div className="mt-8 flex flex-wrap gap-4">

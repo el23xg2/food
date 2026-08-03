@@ -14,7 +14,7 @@ function GalleryImage({ image }: { image: CaseStudyImage }) {
   if (hasError) return null;
 
   // Use native img to avoid Next.js image optimizer cache serving stale assets
-  const src = image.src.includes("?") ? image.src : `${image.src}?v=2`;
+  const src = image.src.includes("?") ? image.src : `${image.src}?v=3`;
 
   return (
     <figure className="overflow-hidden rounded-xl border border-border bg-surface">
