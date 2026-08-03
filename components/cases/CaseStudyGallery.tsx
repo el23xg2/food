@@ -15,12 +15,13 @@ function GalleryImage({ image }: { image: CaseStudyImage }) {
 
   return (
     <figure className="overflow-hidden rounded-xl border border-border bg-surface">
-      <div className="relative aspect-[16/10] w-full bg-surface-elevated">
+      <div className="relative w-full bg-surface-elevated">
         <Image
           src={image.src}
           alt={image.alt}
-          fill
-          className="object-cover object-top"
+          width={1225}
+          height={3733}
+          className="h-auto w-full"
           sizes="(max-width: 768px) 100vw, 720px"
           onError={() => setHasError(true)}
         />
