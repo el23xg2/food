@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Product Case Studies",
   description:
     "AI Native 产品经理作品集。记录产品决策过程，从问题定义到可运行的产品。",
-  url: "https://portfolio.vercel.app",
+  url: "https://workspace-psi-eight-93.vercel.app",
   ogImage: "/og.png",
   author: "高雪怿",
   role: "AI Native Product Manager / AI Native Builder",
