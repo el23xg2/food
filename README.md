@@ -20,11 +20,25 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy to Vercel
 
-```bash
-npm run build
-```
+### 方式一：一键导入（推荐，约 2 分钟）
 
-Or connect the repository to [Vercel](https://vercel.com) for automatic deployments.
+1. 打开 [Vercel 导入页面](https://vercel.com/new/import?s=https://github.com/el23xg2/food)
+2. 使用 GitHub 登录并授权 Vercel
+3. 选择仓库 `el23xg2/food`，分支 `main`
+4. Framework 会自动识别为 **Next.js**，无需修改配置
+5. 点击 **Deploy**，等待约 1–2 分钟
+
+部署完成后，在 `lib/site.ts` 中将 `url` 更新为你的 Vercel 域名（如 `https://food-xxx.vercel.app`）。
+
+### 方式二：GitHub Actions 自动部署
+
+在 GitHub 仓库 Settings → Secrets 中添加：
+
+- `VERCEL_TOKEN` — 从 [Vercel Account Tokens](https://vercel.com/account/tokens) 获取
+- `VERCEL_ORG_ID` — 运行 `vercel link` 后在 `.vercel/project.json` 中查看
+- `VERCEL_PROJECT_ID` — 同上
+
+推送至 `main` 分支后将自动部署。
 
 ## Adding a New Case Study
 
