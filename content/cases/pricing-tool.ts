@@ -96,6 +96,30 @@ const pricingTool: CaseStudy = {
       "如果部署给团队，还需要增加：多人协作、历史分析存档、模板市场等功能。",
     ],
   },
+  media: {
+    productImages: [
+      {
+        src: "/images/cases/pricing-tool/price-trend-brands.png",
+        alt: "Competitor pricing bubble chart by brand",
+        caption: "多月份销量与价格变动趋势 — 品牌维度气泡图，自动过滤异常天价",
+      },
+      {
+        src: "/images/cases/pricing-tool/price-trend-sku.png",
+        alt: "SKU-level price trend with detail tooltip",
+        caption: "SKU 维度下钻 — 点击节点查看真实均价、销量、销售额",
+      },
+      {
+        src: "/images/cases/pricing-tool/competitor-params.png",
+        alt: "Competitor parameter comparison cards",
+        caption: "竞品参数卡片 — 价格 × 功能参数对比，直接可用于汇报",
+      },
+      {
+        src: "/images/cases/pricing-tool/price-band-analysis.png",
+        alt: "Price band market share distribution",
+        caption: "价格带市场份额分布 — 销量王 / 销售额王 / 红海区间一目了然",
+      },
+    ],
+  },
 };
 
 export default pricingTool;
