@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -10,12 +10,12 @@ export function Footer() {
           <p className="mt-1 text-sm text-subtle">{siteConfig.role}</p>
         </div>
         <div className="flex items-center gap-6">
-          <Link
+          <TransitionLink
             href="/contact"
             className="text-sm text-muted transition-colors hover:text-accent"
           >
             Contact
-          </Link>
+          </TransitionLink>
           <a
             href={siteConfig.links.github}
             target="_blank"

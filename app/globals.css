@@ -30,6 +30,51 @@
   .animate-fade-up {
     animation: fade-up 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
   }
+
+  .page-transition {
+    animation: page-enter 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+
+  ::view-transition-old(root) {
+    animation: page-exit 0.3s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: page-enter 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }
 
 html {

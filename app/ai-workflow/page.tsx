@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { getAllCases } from "@/lib/cases";
 import { formatCaseNumber } from "@/lib/cases";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -95,7 +95,7 @@ export default function AIWorkflowPage() {
         <div className="mt-10 space-y-4">
           {allCases.map((caseStudy, i) => (
             <FadeIn key={caseStudy.slug} delay={i * 0.06}>
-              <Link
+              <TransitionLink
                 href={`/cases/${caseStudy.slug}#aiWorkflow`}
                 className="group block rounded-xl border border-border bg-surface p-6 transition-all hover:border-accent/30 hover:bg-surface-elevated"
               >
@@ -125,7 +125,7 @@ export default function AIWorkflowPage() {
                     </span>
                   ))}
                 </div>
-              </Link>
+              </TransitionLink>
             </FadeIn>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import {
   getAllCaseSlugs,
   getCaseBySlug,
@@ -46,12 +46,12 @@ export default async function CasePage({ params }: CasePageProps) {
       <CaseStudyContent caseStudy={caseStudy} />
       <CaseNavigation prev={prev} next={next} />
       <div className="mt-10 text-center">
-        <Link
+        <TransitionLink
           href="/contact"
           className="text-sm text-subtle transition-colors hover:text-accent"
         >
           对这篇 Case 有疑问？→ Contact
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { getAllCases, getFeaturedCases } from "@/lib/cases";
 import { siteConfig } from "@/lib/site";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -29,12 +29,12 @@ export default function HomePage() {
             从问题定义到可运行的产品。
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
+            <TransitionLink
               href="/cases"
               className="inline-flex items-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
               进入 Case Studies →
-            </Link>
+            </TransitionLink>
           </div>
         </div>
       </section>
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <FadeIn>
-            <Link
+            <TransitionLink
               href="/ai-workflow"
               className="group block rounded-2xl border border-border bg-surface p-8 transition-all hover:border-accent/30 hover:bg-surface-elevated md:p-12"
             >
@@ -99,7 +99,7 @@ export default function HomePage() {
               <p className="mt-6 text-sm text-subtle transition-colors group-hover:text-accent">
                 阅读 AI Workflow →
               </p>
-            </Link>
+            </TransitionLink>
           </FadeIn>
         </div>
       </section>

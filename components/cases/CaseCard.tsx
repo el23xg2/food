@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import type { CaseStudy } from "@/types/case-study";
 import { formatCaseNumber } from "@/lib/cases";
 import { Tag } from "@/components/ui/Tag";
@@ -12,7 +12,7 @@ export function CaseCard({ caseStudy, variant = "default" }: CaseCardProps) {
   const isFeatured = variant === "featured";
 
   return (
-    <Link
+    <TransitionLink
       href={`/cases/${caseStudy.slug}`}
       className={`group block rounded-2xl border border-border bg-surface transition-all duration-300 hover:border-accent/30 hover:bg-surface-elevated ${
         isFeatured ? "p-8 md:p-10" : "p-6"
@@ -52,6 +52,6 @@ export function CaseCard({ caseStudy, variant = "default" }: CaseCardProps) {
       <p className="mt-6 text-sm text-subtle transition-colors group-hover:text-accent">
         Read Case Study →
       </p>
-    </Link>
+    </TransitionLink>
   );
 }

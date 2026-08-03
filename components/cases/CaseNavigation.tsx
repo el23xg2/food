@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import type { CaseStudy } from "@/types/case-study";
 import { formatCaseNumber } from "@/lib/cases";
 
@@ -11,7 +11,7 @@ export function CaseNavigation({ prev, next }: CaseNavigationProps) {
   return (
     <nav className="mt-20 flex items-stretch justify-between gap-4 border-t border-border-subtle pt-10">
       {prev ? (
-        <Link
+        <TransitionLink
           href={`/cases/${prev.slug}`}
           className="group flex-1 rounded-xl border border-border bg-surface p-5 transition-all hover:border-accent/30 hover:bg-surface-elevated"
         >
@@ -22,13 +22,13 @@ export function CaseNavigation({ prev, next }: CaseNavigationProps) {
             </span>{" "}
             {prev.title}
           </p>
-        </Link>
+        </TransitionLink>
       ) : (
         <div className="flex-1" />
       )}
 
       {next ? (
-        <Link
+        <TransitionLink
           href={`/cases/${next.slug}`}
           className="group flex-1 rounded-xl border border-border bg-surface p-5 text-right transition-all hover:border-accent/30 hover:bg-surface-elevated"
         >
@@ -39,7 +39,7 @@ export function CaseNavigation({ prev, next }: CaseNavigationProps) {
             </span>{" "}
             {next.title}
           </p>
-        </Link>
+        </TransitionLink>
       ) : (
         <div className="flex-1" />
       )}

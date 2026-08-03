@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import type { CaseStudy } from "@/types/case-study";
 import { formatCaseNumber } from "@/lib/cases";
 
@@ -8,7 +8,7 @@ interface CaseListItemProps {
 
 export function CaseListItem({ caseStudy }: CaseListItemProps) {
   return (
-    <Link
+    <TransitionLink
       href={`/cases/${caseStudy.slug}`}
       className="group flex items-center justify-between gap-4 border-b border-border-subtle py-5 transition-colors hover:border-accent/20"
     >
@@ -29,6 +29,6 @@ export function CaseListItem({ caseStudy }: CaseListItemProps) {
       <span className="shrink-0 text-subtle transition-colors group-hover:text-accent sm:hidden">
         →
       </span>
-    </Link>
+    </TransitionLink>
   );
 }

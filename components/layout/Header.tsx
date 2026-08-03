@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site";
@@ -12,16 +12,16 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link
+        <TransitionLink
           href="/"
           className="text-sm font-medium tracking-tight text-foreground transition-colors hover:text-accent"
         >
           {siteConfig.name}
-        </Link>
+        </TransitionLink>
 
         <nav className="hidden items-center gap-8 md:flex">
           {siteConfig.nav.map((item) => (
-            <Link
+            <TransitionLink
               key={item.href}
               href={item.href}
               className={`text-sm transition-colors ${
@@ -31,7 +31,7 @@ export function Header() {
               }`}
             >
               {item.label}
-            </Link>
+            </TransitionLink>
           ))}
         </nav>
 
@@ -62,14 +62,14 @@ export function Header() {
         <div className="min-h-0">
           <div className="flex flex-col gap-1 px-6 py-4">
             {siteConfig.nav.map((item) => (
-              <Link
+              <TransitionLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="py-2 text-sm text-muted transition-colors hover:text-foreground"
               >
                 {item.label}
-              </Link>
+              </TransitionLink>
             ))}
           </div>
         </div>
