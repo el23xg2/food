@@ -128,27 +128,27 @@ const quotebox: CaseStudy = {
   media: {
     productImages: [
       {
-        src: "/images/cases/quotebox/product-landing.png",
+        src: "/images/cases/quotebox/product-landing.jpg",
         alt: "QuoteBox landing page with pricing comparison",
         caption: "Landing Page — $9/月定位，对比 HoneyBook $36/月",
       },
       {
-        src: "/images/cases/quotebox/product-dashboard.png",
+        src: "/images/cases/quotebox/product-dashboard.jpg",
         alt: "QuoteBox dashboard",
         caption: "Dashboard — 客户、报价、合同、发票一站式管理",
       },
       {
-        src: "/images/cases/quotebox/product-quote.png",
+        src: "/images/cases/quotebox/product-quote.jpg",
         alt: "QuoteBox client quote page",
         caption: "Quote — 客户侧报价单，一键 Accept Quote",
       },
       {
-        src: "/images/cases/quotebox/product-contract.png",
+        src: "/images/cases/quotebox/product-contract.jpg",
         alt: "QuoteBox service agreement",
         caption: "Contract — 从报价自动生成的 Service Agreement",
       },
       {
-        src: "/images/cases/quotebox/product-invoice.png",
+        src: "/images/cases/quotebox/product-invoice.jpg",
         alt: "QuoteBox invoice with payment",
         caption: "Invoice — 在线支付，完成交易闭环",
       },
