@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import type { CaseStudyImage } from "@/types/case-study";
 
@@ -14,16 +13,18 @@ function GalleryImage({ image }: { image: CaseStudyImage }) {
 
   if (hasError) return null;
 
+  // Use native img to avoid Next.js image optimizer cache serving stale assets
+  const src = image.src.includes("?") ? image.src : `${image.src}?v=2`;
+
   return (
     <figure className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="relative w-full bg-surface-elevated">
-        <Image
-          src={image.src}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
           alt={image.alt}
-          width={1440}
-          height={900}
           className="h-auto w-full"
-          sizes="(max-width: 768px) 100vw, 720px"
+          loading="lazy"
           onError={() => setHasError(true)}
         />
       </div>
