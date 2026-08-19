@@ -37,3 +37,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 独立项目（桌面 骑砍2cursor，与本站无关）
+/骑砍2cursor/
