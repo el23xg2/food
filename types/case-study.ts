@@ -17,7 +17,6 @@ export interface CaseStudyHighlight {
 export interface CaseStudyMedia {
   images?: CaseStudyImage[];
   productImages?: CaseStudyImage[];
-  /** Shown below the Solution / 产品方案 section */
   solutionImages?: CaseStudyImage[];
   highlights?: CaseStudyHighlight[];
 }
@@ -63,17 +62,20 @@ export interface TravelCaseProfile {
     thinking: string;
   }[];
   corePain: {
-    scene: string;
-    painPoints: string[];
-    abstraction: string;
+    sectionIntro: string;
+    workflowDiagram: string;
+    abstractions: string[];
   };
-  concepts: {
-    goal: string;
-    ideas: {
-      title: string;
-      aiWorkflow: string;
-      productExperience: string;
-    }[];
+  productSchemes: {
+    title: string;
+    definition: string;
+    value: string;
+  }[];
+  aiArchitectureDiagram: string;
+  efficiencyComparison: {
+    traditional: string;
+    aiMode: string;
+    validation: string;
   };
   pmSummary: string[];
 }
@@ -106,11 +108,13 @@ export interface CaseStudy {
 }
 
 export const TRAVEL_CASE_SECTIONS = [
-  { id: "profile", title: "01 · 玩家画像" },
-  { id: "scenes", title: "02 · 场景复盘" },
-  { id: "pain", title: "03 · 核心痛点" },
-  { id: "concepts", title: "04 · 0-1 概念设想" },
-  { id: "summary", title: "05 · PM 思考与总结" },
+  { id: "profile", title: "01 · 个人玩家画像" },
+  { id: "scenes", title: "02 · 场景深度复盘" },
+  { id: "pain", title: "03 · 核心痛点拆解" },
+  { id: "schemes", title: "04 · 0-1 产品方案" },
+  { id: "ai-arch", title: "05 · AI 工作流推演" },
+  { id: "efficiency", title: "06 · 体验效率对比" },
+  { id: "summary", title: "07 · PM 思考与总结" },
 ] as const;
 
 export const CASE_SECTIONS = [
