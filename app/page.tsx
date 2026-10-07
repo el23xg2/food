@@ -93,7 +93,7 @@ export default function HomePage() {
                 AI 如何参与我的产品开发
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-                多个项目中的 AI 工作流模式总结——从问题定义到产品验证，AI
+                六个项目中的 AI 工作流模式总结——从问题定义到产品验证，AI
                 在每个环节扮演什么角色。
               </p>
               <p className="mt-6 text-sm text-subtle transition-colors group-hover:text-accent">
