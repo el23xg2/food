@@ -95,7 +95,7 @@ export interface CaseStudy {
 }
 
 export const TRAVEL_CASE_SECTIONS = [
-  { id: "hook", title: "这页在证明什么" },
+  { id: "hook", title: "概要" },
   { id: "routes", title: "我规划并成行的路线" },
   { id: "journey", title: "小红书用户的决策链路" },
   { id: "frictions", title: "三个亲身痛点" },

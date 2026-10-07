@@ -107,7 +107,7 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
           <section id="hook" className="scroll-mt-24">
             <FadeIn>
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                这页在证明什么
+                概要
               </h2>
               <p className="prose-case mt-6 text-muted">{profile.readerHook}</p>
               <ul className="mt-8 space-y-4">
