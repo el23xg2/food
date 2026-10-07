@@ -52,14 +52,30 @@ export interface CaseStudyAIWorkflow {
 }
 
 export interface TravelCaseProfile {
-  readerHook: string;
-  traitsForRole: { label: string; detail: string }[];
-  routes: { group: string; items: string[] }[];
-  journey: { stage: string; body: string; friction: string }[];
-  frictions: { title: string; scene: string; productInsight: string }[];
-  planningMethod: string[];
-  productBets: string[];
-  roleFit: string;
+  caseAttribute: string;
+  playerProfile: {
+    annualAssets: string;
+    scenarios: { label: string; detail: string }[];
+  };
+  sceneReview: {
+    title: string;
+    phenomenon: string;
+    thinking: string;
+  }[];
+  corePain: {
+    scene: string;
+    painPoints: string[];
+    abstraction: string;
+  };
+  concepts: {
+    goal: string;
+    ideas: {
+      title: string;
+      aiWorkflow: string;
+      productExperience: string;
+    }[];
+  };
+  pmSummary: string[];
 }
 
 export interface CaseStudy {
@@ -75,14 +91,12 @@ export interface CaseStudy {
   timeline: string;
   keyOutcome: string;
   overview: string;
-  /** Default: standard seven-act case. Travel role uses `travel` + `travelProfile`. */
   layout?: "standard" | "travel";
   travelProfile?: TravelCaseProfile;
   why?: CaseStudySection;
   problem?: CaseStudySection;
   opportunity?: CaseStudySection;
   solution?: CaseStudySection;
-  /** Omit for projects that did not use AI in delivery (section hidden on case page). */
   aiWorkflow?: CaseStudyAIWorkflow;
   outcome?: CaseStudySection;
   reflection?: CaseStudySection;
@@ -92,13 +106,11 @@ export interface CaseStudy {
 }
 
 export const TRAVEL_CASE_SECTIONS = [
-  { id: "hook", title: "概要" },
-  { id: "routes", title: "我规划并成行的路线" },
-  { id: "journey", title: "小红书用户的决策链路" },
-  { id: "frictions", title: "三个亲身痛点" },
-  { id: "method", title: "我怎么定方案" },
-  { id: "bets", title: "想做的产品方向" },
-  { id: "fit", title: "相关项目" },
+  { id: "profile", title: "01 · 玩家画像" },
+  { id: "scenes", title: "02 · 场景复盘" },
+  { id: "pain", title: "03 · 核心痛点" },
+  { id: "concepts", title: "04 · 0-1 概念设想" },
+  { id: "summary", title: "05 · PM 思考与总结" },
 ] as const;
 
 export const CASE_SECTIONS = [
