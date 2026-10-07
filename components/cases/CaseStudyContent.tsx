@@ -33,10 +33,14 @@ function SectionContent({ section }: { section: CaseStudySection }) {
 export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   const [activeSection, setActiveSection] = useState("why");
 
+  const visibleSections = CASE_SECTIONS.filter(
+    (section) => section.id !== "aiWorkflow" || caseStudy.aiWorkflow
+  );
+
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
-    CASE_SECTIONS.forEach(({ id }) => {
+    visibleSections.forEach(({ id }) => {
       const el = document.getElementById(id);
       if (!el) return;
 
@@ -54,7 +58,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [caseStudy.slug, caseStudy.aiWorkflow, visibleSections]);
 
   const sectionContent: Record<string, React.ReactNode> = {
     why: <SectionContent section={caseStudy.why} />,
@@ -69,40 +73,44 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
           )}
       </div>
     ),
-    aiWorkflow: (
-      <div>
-        <div className="prose-case">
-          <p>{caseStudy.aiWorkflow.intro}</p>
-        </div>
-        <div className="mt-8 overflow-x-auto rounded-xl border border-border">
-          <table className="w-full min-w-[600px] text-left text-sm">
-            <thead>
-              <tr className="border-b border-border bg-surface-elevated">
-                <th className="px-4 py-3 font-medium text-foreground">阶段</th>
-                <th className="px-4 py-3 font-medium text-foreground">我的工作</th>
-                <th className="px-4 py-3 font-medium text-foreground">AI 的角色</th>
-              </tr>
-            </thead>
-            <tbody>
-              {caseStudy.aiWorkflow.rows.map((row, i) => (
-                <tr key={i} className="border-b border-border-subtle last:border-0">
-                  <td className="px-4 py-3 text-accent">{row.phase}</td>
-                  <td className="px-4 py-3 text-muted">{row.myWork}</td>
-                  <td className="px-4 py-3 text-muted">{row.aiRole}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        {caseStudy.aiWorkflow.examples.length > 0 && (
-          <ul className="prose-case mt-8">
-            {caseStudy.aiWorkflow.examples.map((ex, i) => (
-              <li key={i}>{ex}</li>
-            ))}
-          </ul>
-        )}
-      </div>
-    ),
+    ...(caseStudy.aiWorkflow
+      ? {
+          aiWorkflow: (
+            <div>
+              <div className="prose-case">
+                <p>{caseStudy.aiWorkflow.intro}</p>
+              </div>
+              <div className="mt-8 overflow-x-auto rounded-xl border border-border">
+                <table className="w-full min-w-[600px] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-border bg-surface-elevated">
+                      <th className="px-4 py-3 font-medium text-foreground">阶段</th>
+                      <th className="px-4 py-3 font-medium text-foreground">我的工作</th>
+                      <th className="px-4 py-3 font-medium text-foreground">AI 的角色</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {caseStudy.aiWorkflow.rows.map((row, i) => (
+                      <tr key={i} className="border-b border-border-subtle last:border-0">
+                        <td className="px-4 py-3 text-accent">{row.phase}</td>
+                        <td className="px-4 py-3 text-muted">{row.myWork}</td>
+                        <td className="px-4 py-3 text-muted">{row.aiRole}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {caseStudy.aiWorkflow.examples.length > 0 && (
+                <ul className="prose-case mt-8">
+                  {caseStudy.aiWorkflow.examples.map((ex, i) => (
+                    <li key={i}>{ex}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ),
+        }
+      : {}),
     outcome: (
       <div>
         <SectionContent section={caseStudy.outcome} />
@@ -203,7 +211,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
               Contents
             </p>
             <ul className="space-y-1">
-              {CASE_SECTIONS.map(({ id, label, title }) => (
+              {visibleSections.map(({ id, label, title }) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
@@ -224,7 +232,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
 
         {/* Main content */}
         <div className="min-w-0 flex-1 max-w-3xl">
-          {CASE_SECTIONS.map(({ id, label, title }, index) => (
+          {visibleSections.map(({ id, label, title }, index) => (
             <section key={id} id={id} className="mb-20 scroll-mt-24">
               <FadeIn delay={index * 0.05}>
                 <div className="mb-8">

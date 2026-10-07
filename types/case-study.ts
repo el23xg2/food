@@ -68,7 +68,8 @@ export interface CaseStudy {
   problem: CaseStudySection;
   opportunity: CaseStudySection;
   solution: CaseStudySection;
-  aiWorkflow: CaseStudyAIWorkflow;
+  /** Omit for projects that did not use AI in delivery (section hidden on case page). */
+  aiWorkflow?: CaseStudyAIWorkflow;
   outcome: CaseStudySection;
   reflection: CaseStudySection;
   links?: CaseStudyLink[];

@@ -52,31 +52,6 @@ const npcTeamAi: CaseStudy = {
       "团队协同：集火、掩护、包抄等基本战术行为",
     ],
   },
-  aiWorkflow: {
-    intro: "Cursor 辅助 UE4 蓝图与 C++ 逻辑开发，AI 帮助理解复杂的行为树架构。",
-    rows: [
-      {
-        phase: "架构设计",
-        myWork: "定义感知→决策→协同→执行四层架构",
-        aiRole: "AI 辅助行为树设计模式研究",
-      },
-      {
-        phase: "实现",
-        myWork: "UE4 蓝图逻辑、行为树配置",
-        aiRole: "Cursor 生成 C++ 与蓝图代码",
-      },
-      {
-        phase: "调试",
-        myWork: "观察 NPC 行为，迭代协同逻辑",
-        aiRole: "AI 辅助分析行为异常原因",
-      },
-    ],
-    examples: [
-      "行为树设计：AI 帮助理解 UE4 行为树最佳实践，加速架构决策",
-      "掩体算法：Cursor 生成掩体评分与分配逻辑",
-      "这是一个学习型项目，重点是理解 AI Agent 协作的基础问题",
-    ],
-  },
   outcome: {
     paragraphs: [
       "实现了可运行的团队 AI 演示，NPC 具备基本的协同作战能力。",

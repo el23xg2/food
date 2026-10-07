@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 export const metadata: Metadata = {
   title: "AI Workflow",
   description:
-    "AI Native 产品开发工作流——六个项目中 AI 如何参与产品开发的模式总结。",
+    "AI Native 产品开发工作流——各项目中 AI 如何参与产品开发的模式总结。",
 };
 
 const workflowPhases = [
@@ -38,7 +38,7 @@ const boundaries = [
 ];
 
 export default function AIWorkflowPage() {
-  const allCases = getAllCases();
+  const aiCases = getAllCases().filter((caseStudy) => caseStudy.aiWorkflow);
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-24">
@@ -50,7 +50,7 @@ export default function AIWorkflowPage() {
           AI Workflow
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-          AI 如何参与我的产品开发——从六个项目实践中提炼的工作模式。
+          AI 如何参与我的产品开发——从 {aiCases.length} 个项目实践中提炼的工作模式。
         </p>
       </FadeIn>
 
@@ -88,12 +88,12 @@ export default function AIWorkflowPage() {
       <section className="mt-20">
         <FadeIn>
           <h2 className="text-xl font-medium text-foreground md:text-2xl">
-            六项目 AI 参与对比
+            项目 AI 参与对比
           </h2>
         </FadeIn>
 
         <div className="mt-10 space-y-4">
-          {allCases.map((caseStudy, i) => (
+          {aiCases.map((caseStudy, i) => (
             <FadeIn key={caseStudy.slug} delay={i * 0.06}>
               <TransitionLink
                 href={`/cases/${caseStudy.slug}#aiWorkflow`}
@@ -108,7 +108,7 @@ export default function AIWorkflowPage() {
                       {caseStudy.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {caseStudy.aiWorkflow.intro}
+                      {caseStudy.aiWorkflow!.intro}
                     </p>
                   </div>
                   <span className="shrink-0 text-xs text-subtle transition-colors group-hover:text-accent">
@@ -116,7 +116,7 @@ export default function AIWorkflowPage() {
                   </span>
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {caseStudy.aiWorkflow.rows.map((row) => (
+                  {caseStudy.aiWorkflow!.rows.map((row) => (
                     <span
                       key={row.phase}
                       className="rounded-full bg-surface-elevated px-2.5 py-0.5 text-xs text-subtle"
