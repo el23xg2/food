@@ -46,7 +46,7 @@ const quotebox: CaseStudy = {
     ],
     bullets: [
       "功能取舍：优先完成核心交易闭环，暂缓复杂的项目管理与 CRM 功能",
-      "支付策略：先接入 Stripe，覆盖主流跨境支付场景",
+      "支付策略：原计划接入 Stripe 覆盖跨境收款；因开户地区限制无法使用，改接 Creem 完成订阅与在线支付",
       "数据库设计：以「报价单」为核心实体，合同、签名、发票均从报价单派生",
       "SEO 策略：针对 freelance invoicing、quote template 等长尾词优化落地页",
       "发布策略：Product Hunt 首发，获取早期用户反馈与外链",
@@ -85,12 +85,12 @@ const quotebox: CaseStudy = {
     examples: [
       "竞品分析：用 AI 在 2 小时内完成 8 个竞品的定价、功能、用户评价对比",
       "数据库设计：在 Cursor 中迭代 schema，从产品需求直接推导数据模型",
-      "支付接入：Stripe webhook 逻辑由 Cursor 生成，我负责验收支付流程完整性",
+      "支付接入：Creem webhook / 回调逻辑由 Cursor 生成，我负责验收订阅与支付流程完整性",
     ],
   },
   outcome: {
     paragraphs: [
-      "quotebox.pro 已上线并可访问，完成 Stripe 支付接入，并于 2026 年 7 月 22 日在 Product Hunt 正式发布。",
+      "quotebox.pro 已上线并可访问，完成 Creem 支付接入（Stripe 为初版方案，因地区限制未采用），并于 2026 年 7 月 22 日在 Product Hunt 正式发布。",
       "Product Hunt 定位为「The simplest HoneyBook alternative for freelancers」—— 轻量定价 $9/月，提供免费套餐，核心链路覆盖报价、合同、电子签名与发票。",
       "局限：作为个人项目，尚处于早期验证阶段，用户规模与留存数据仍在积累中。",
     ],
