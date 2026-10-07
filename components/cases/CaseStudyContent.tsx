@@ -60,7 +60,15 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
     why: <SectionContent section={caseStudy.why} />,
     problem: <SectionContent section={caseStudy.problem} />,
     opportunity: <SectionContent section={caseStudy.opportunity} />,
-    solution: <SectionContent section={caseStudy.solution} />,
+    solution: (
+      <div>
+        <SectionContent section={caseStudy.solution} />
+        {caseStudy.media?.solutionImages &&
+          caseStudy.media.solutionImages.length > 0 && (
+            <CaseStudyGallery images={caseStudy.media.solutionImages} />
+          )}
+      </div>
+    ),
     aiWorkflow: (
       <div>
         <div className="prose-case">

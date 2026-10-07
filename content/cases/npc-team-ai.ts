@@ -95,6 +95,27 @@ const npcTeamAi: CaseStudy = {
       "作为 PM，我不需要成为 AI 工程师，但需要理解 Agent 协作的边界与可能性。",
     ],
   },
+  media: {
+    solutionImages: [
+      {
+        src: "/images/cases/npc-team-ai/solution-perception-cover.png",
+        alt: "UE4 演示：NPC 感知环境与掩体",
+        caption:
+          "NPC 通过视觉/听觉感知环境，同时感知队友掩体位置，选择最优掩体位置。",
+      },
+      {
+        src: "/images/cases/npc-team-ai/solution-target-sharing.png",
+        alt: "UE4 演示：小队目标共享与攻击对象分配",
+        caption:
+          "小队成员共享当前目标，根据多参数权重分配计算最优攻击对象。",
+      },
+      {
+        src: "/images/cases/npc-team-ai/solution-cover-logic.png",
+        alt: "UE4 蓝图：检测掩体 Service 逻辑",
+        caption: "最优掩体选择逻辑",
+      },
+    ],
+  },
 };
 
 export default npcTeamAi;

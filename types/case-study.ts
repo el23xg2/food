@@ -17,6 +17,8 @@ export interface CaseStudyHighlight {
 export interface CaseStudyMedia {
   images?: CaseStudyImage[];
   productImages?: CaseStudyImage[];
+  /** Shown below the Solution / 产品方案 section */
+  solutionImages?: CaseStudyImage[];
   highlights?: CaseStudyHighlight[];
 }
 
