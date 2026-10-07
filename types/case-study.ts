@@ -51,11 +51,8 @@ export interface CaseStudyAIWorkflow {
   examples: string[];
 }
 
-/** Travel PM portfolio page — not the standard product case seven-act structure. */
 export interface TravelCaseProfile {
-  /** What this page is for (HR / hiring manager scan). */
   readerHook: string;
-  /** Traits the travel innovation PM role cares about. */
   traitsForRole: { label: string; detail: string }[];
   routes: { group: string; items: string[] }[];
   journey: { stage: string; body: string; friction: string }[];
@@ -100,8 +97,8 @@ export const TRAVEL_CASE_SECTIONS = [
   { id: "journey", title: "小红书用户的决策链路" },
   { id: "frictions", title: "三个亲身痛点" },
   { id: "method", title: "我怎么定方案" },
-  { id: "bets", title: "我会先验证什么" },
-  { id: "fit", title: "和旅行产品岗的对应" },
+  { id: "bets", title: "想做的产品方向" },
+  { id: "fit", title: "相关项目" },
 ] as const;
 
 export const CASE_SECTIONS = [

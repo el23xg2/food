@@ -129,9 +129,6 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
                 我规划并成行的路线
               </h2>
-              <p className="mt-4 text-sm text-subtle">
-                不是打卡清单，而是多次独立/结伴规划的真实样本（留学期间为主，延续至今）。
-              </p>
               <div className="mt-8 space-y-6">
                 {profile.routes.map((block) => (
                   <div
@@ -153,11 +150,8 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
           <section id="journey" className="scroll-mt-24">
             <FadeIn>
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                小红书用户的决策链路
+                从小红书到出发
               </h2>
-              <p className="mt-4 text-sm text-subtle">
-                我长期在小红书消费旅行内容，熟悉从种草到出发的完整路径。
-              </p>
               <ol className="mt-8 space-y-6">
                 {profile.journey.map((step, i) => (
                   <li
@@ -170,7 +164,7 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
                     <h3 className="text-sm font-medium text-foreground">{step.stage}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
                     <p className="mt-3 border-t border-border-subtle pt-3 text-sm leading-relaxed text-subtle">
-                      <span className="text-foreground/80">摩擦：</span>
+                      <span className="text-foreground/80">卡点 </span>
                       {step.friction}
                     </p>
                   </li>
@@ -182,11 +176,8 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
           <section id="frictions" className="scroll-mt-24">
             <FadeIn>
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                三个亲身痛点
+                三个具体场景
               </h2>
-              <p className="mt-4 text-sm text-subtle">
-                每个痛点 = 真实场景 + 若我做产品会怎么理解（不是教程，不是吐槽）。
-              </p>
               <div className="mt-8 space-y-6">
                 {profile.frictions.map((f) => (
                   <article
@@ -202,7 +193,7 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
                         {f.scene}
                       </p>
                       <p className="text-muted">
-                        <span className="font-medium text-foreground/90">产品启示 </span>
+                        <span className="font-medium text-foreground/90">方向 </span>
                         {f.productInsight}
                       </p>
                     </div>
@@ -228,11 +219,8 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
           <section id="bets" className="scroll-mt-24">
             <FadeIn>
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                我会先验证什么
+                想做的产品方向
               </h2>
-              <p className="mt-4 text-sm text-subtle">
-                作为 PM 的 hypothetical 方向——来自上述痛点，不是已上线功能。
-              </p>
               <ul className="prose-case mt-8">
                 {profile.productBets.map((b) => (
                   <li key={b}>{b}</li>
@@ -244,7 +232,7 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
           <section id="fit" className="scroll-mt-24">
             <FadeIn>
               <h2 className="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                和「创新产品经理 · 旅行」的对应
+                相关项目
               </h2>
               <p className="prose-case mt-6 text-muted">{profile.roleFit}</p>
             </FadeIn>
