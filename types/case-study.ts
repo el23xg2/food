@@ -78,6 +78,9 @@ export interface TravelCaseProfile {
     validation: string;
   };
   pmSummary: string[];
+  profileImages?: CaseStudyImage[];
+  sceneImages?: CaseStudyImage[];
+  painImages?: CaseStudyImage[];
 }
 
 export interface CaseStudy {

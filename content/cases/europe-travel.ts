@@ -114,6 +114,44 @@ const europeTravel: CaseStudy = {
       "好的工具不应只是「静态规划」，更要是「有安全感的随行伙伴」：旅行产品的核心价值不仅在于顺利时帮用户规划完美行程，更在于现实打乱计划时能给用户兜底的安全感。",
       "AI 的边界是辅助繁琐，而非代替人类探索：AI 承接枯燥重复的「信息识别、找坐标、拼接路线」，把偏好选择、文化品味与现场探索留给旅行者。",
     ],
+    profileImages: [
+      {
+        src: "/images/cases/europe-travel/profile-footprint-10-countries.png",
+        alt: "足迹 App：点亮 10 个国家",
+        caption: "年度出行足迹 — 近一年点亮 10 国（英/法/西/意/希/埃/澳等），英国行程次数最多",
+      },
+      {
+        src: "/images/cases/europe-travel/profile-dubrovnik-got-compare.png",
+        alt: "权游取景与杜布罗夫尼克实景对比",
+        caption: "IP 驱动：《权游》取景 vs 杜布罗夫尼克实地 — 情绪灵感如何转化为锚点城市",
+      },
+      {
+        src: "/images/cases/europe-travel/profile-gbr-diving.png",
+        alt: "大堡礁潜水",
+        caption: "垂直兴趣：澳洲大堡礁深潜（另含埃及红海等潜水线）",
+      },
+    ],
+    sceneImages: [
+      {
+        src: "/images/cases/europe-travel/scene-airport-overnight.png",
+        alt: "航班延误后在机场等候区过夜",
+        caption:
+          "现场变局：系统故障叠加瑞安航空延误，机场信息缺失，在等候区打地铺等待（原计划法国段未能成行）",
+      },
+    ],
+    painImages: [
+      {
+        src: "/images/cases/europe-travel/pain-xhs-sydney-citywalk.png",
+        alt: "小红书悉尼 Citywalk 路线帖",
+        caption: "灵感端：小红书 Citywalk 路线多在图文/手绘地图里",
+      },
+      {
+        src: "/images/cases/europe-travel/pain-google-maps-waypoints.png",
+        alt: "Google Maps 手动添加多个经停点",
+        caption:
+          "工具端：同一行程需在 Google Maps 手动添加 5 个经停点（示例 6.4km · 约 1.5 小时步行）",
+      },
+    ],
   },
 };
 

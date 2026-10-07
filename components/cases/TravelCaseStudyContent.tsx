@@ -6,6 +6,7 @@ import { TRAVEL_CASE_SECTIONS } from "@/types/case-study";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Tag } from "@/components/ui/Tag";
 import { formatCaseNumber } from "@/lib/cases";
+import { CaseStudyGallery } from "@/components/cases/CaseStudyGallery";
 
 interface TravelCaseStudyContentProps {
   caseStudy: CaseStudy & {
@@ -144,6 +145,9 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
                   </li>
                 ))}
               </ul>
+              {profile.profileImages && profile.profileImages.length > 0 && (
+                <CaseStudyGallery images={profile.profileImages} />
+              )}
             </FadeIn>
           </section>
 
@@ -174,6 +178,9 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
                   </article>
                 ))}
               </div>
+              {profile.sceneImages && profile.sceneImages.length > 0 && (
+                <CaseStudyGallery images={profile.sceneImages} />
+              )}
             </FadeIn>
           </section>
 
@@ -198,6 +205,9 @@ export function TravelCaseStudyContent({ caseStudy }: TravelCaseStudyContentProp
                   <li key={a}>{a}</li>
                 ))}
               </ul>
+              {profile.painImages && profile.painImages.length > 0 && (
+                <CaseStudyGallery images={profile.painImages} />
+              )}
             </FadeIn>
           </section>
 
