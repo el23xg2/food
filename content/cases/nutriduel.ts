@@ -125,6 +125,18 @@ const nutriduel: CaseStudy = {
         caption: "回合结构 — 苏醒 → 摸牌 → 行动 → 代谢 → 结束，五阶段精确结算",
       },
       {
+        src: "/images/cases/nutriduel/gameplay-action-phase.png",
+        alt: "NutriDuel 实机：行动阶段对战界面",
+        caption:
+          "实机 · 行动阶段 — 手牌与场地、1–10 血糖刻度（正常区 4–6 触发 HP 加成）及卡牌 GI/攻防/营养标签在局内生效",
+      },
+      {
+        src: "/images/cases/nutriduel/gameplay-metabolism-phase.png",
+        alt: "NutriDuel 实机：代谢阶段结算",
+        caption:
+          "实机 · 代谢阶段 — 结算 GI、双方血糖与营养协同；事件日志记录出牌、被动与阶段切换",
+      },
+      {
         src: "/images/cases/nutriduel/gdd-nutrition-mapping.png",
         alt: "Card strength value formula and cost targets",
         caption: "数值基准 — CSV = ATK×2 + HP + ARM×1.5，COST 决定数值预算",
