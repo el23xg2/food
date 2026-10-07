@@ -1,8 +1,8 @@
 name: Deploy to Vercel
 
+# 生产部署由 Vercel 连接 GitHub 仓库后自动完成（push main 即部署）。
+# 本 workflow 仅作手动备用；勿与 Vercel Git 集成同时开启 push 触发，以免重复部署或 Secrets 失效时报错。
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 env:
