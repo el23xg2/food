@@ -1,5 +1,11 @@
 import { cases } from "@/content/cases/registry";
-import type { CaseStudy } from "@/types/case-study";
+import type { CaseStudy, TravelCaseProfile } from "@/types/case-study";
+
+export function isTravelCase(
+  caseStudy: CaseStudy
+): caseStudy is CaseStudy & { layout: "travel"; travelProfile: TravelCaseProfile } {
+  return caseStudy.layout === "travel" && caseStudy.travelProfile != null;
+}
 
 export function getAllCases(): CaseStudy[] {
   return [...cases].sort((a, b) => a.number - b.number);

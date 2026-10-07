@@ -33,9 +33,11 @@ function SectionContent({ section }: { section: CaseStudySection }) {
 export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   const [activeSection, setActiveSection] = useState("why");
 
-  const visibleSections = CASE_SECTIONS.filter(
-    (section) => section.id !== "aiWorkflow" || caseStudy.aiWorkflow
-  );
+  const visibleSections = CASE_SECTIONS.filter((section) => {
+    if (section.id === "aiWorkflow") return !!caseStudy.aiWorkflow;
+    const content = caseStudy[section.id as keyof typeof caseStudy];
+    return content != null;
+  });
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -61,12 +63,14 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
   }, [caseStudy.slug, caseStudy.aiWorkflow, visibleSections]);
 
   const sectionContent: Record<string, React.ReactNode> = {
-    why: <SectionContent section={caseStudy.why} />,
-    problem: <SectionContent section={caseStudy.problem} />,
-    opportunity: <SectionContent section={caseStudy.opportunity} />,
+    why: caseStudy.why ? <SectionContent section={caseStudy.why} /> : null,
+    problem: caseStudy.problem ? <SectionContent section={caseStudy.problem} /> : null,
+    opportunity: caseStudy.opportunity ? (
+      <SectionContent section={caseStudy.opportunity} />
+    ) : null,
     solution: (
       <div>
-        <SectionContent section={caseStudy.solution} />
+        {caseStudy.solution ? <SectionContent section={caseStudy.solution} /> : null}
         {caseStudy.media?.solutionImages &&
           caseStudy.media.solutionImages.length > 0 && (
             <CaseStudyGallery images={caseStudy.media.solutionImages} />
@@ -113,7 +117,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       : {}),
     outcome: (
       <div>
-        <SectionContent section={caseStudy.outcome} />
+        {caseStudy.outcome ? <SectionContent section={caseStudy.outcome} /> : null}
         {caseStudy.productHunt && (
           <ProductHuntCard
             tagline={caseStudy.productHunt.tagline}
@@ -135,7 +139,9 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
         )}
       </div>
     ),
-    reflection: <SectionContent section={caseStudy.reflection} />,
+    reflection: caseStudy.reflection ? (
+      <SectionContent section={caseStudy.reflection} />
+    ) : null,
   };
 
   return (

@@ -51,6 +51,20 @@ export interface CaseStudyAIWorkflow {
   examples: string[];
 }
 
+/** Travel PM portfolio page — not the standard product case seven-act structure. */
+export interface TravelCaseProfile {
+  /** What this page is for (HR / hiring manager scan). */
+  readerHook: string;
+  /** Traits the travel innovation PM role cares about. */
+  traitsForRole: { label: string; detail: string }[];
+  routes: { group: string; items: string[] }[];
+  journey: { stage: string; body: string; friction: string }[];
+  frictions: { title: string; scene: string; productInsight: string }[];
+  planningMethod: string[];
+  productBets: string[];
+  roleFit: string;
+}
+
 export interface CaseStudy {
   slug: string;
   number: number;
@@ -64,18 +78,31 @@ export interface CaseStudy {
   timeline: string;
   keyOutcome: string;
   overview: string;
-  why: CaseStudySection;
-  problem: CaseStudySection;
-  opportunity: CaseStudySection;
-  solution: CaseStudySection;
+  /** Default: standard seven-act case. Travel role uses `travel` + `travelProfile`. */
+  layout?: "standard" | "travel";
+  travelProfile?: TravelCaseProfile;
+  why?: CaseStudySection;
+  problem?: CaseStudySection;
+  opportunity?: CaseStudySection;
+  solution?: CaseStudySection;
   /** Omit for projects that did not use AI in delivery (section hidden on case page). */
   aiWorkflow?: CaseStudyAIWorkflow;
-  outcome: CaseStudySection;
-  reflection: CaseStudySection;
+  outcome?: CaseStudySection;
+  reflection?: CaseStudySection;
   links?: CaseStudyLink[];
   media?: CaseStudyMedia;
   productHunt?: ProductHuntLaunch;
 }
+
+export const TRAVEL_CASE_SECTIONS = [
+  { id: "hook", title: "这页在证明什么" },
+  { id: "routes", title: "我规划并成行的路线" },
+  { id: "journey", title: "小红书用户的决策链路" },
+  { id: "frictions", title: "三个亲身痛点" },
+  { id: "method", title: "我怎么定方案" },
+  { id: "bets", title: "我会先验证什么" },
+  { id: "fit", title: "和旅行产品岗的对应" },
+] as const;
 
 export const CASE_SECTIONS = [
   { id: "why", label: "Why", title: "为什么做" },

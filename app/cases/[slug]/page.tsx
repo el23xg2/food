@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import {
   getAllCaseSlugs,
-  getCaseBySlug,
   getAdjacentCases,
+  getCaseBySlug,
+  isTravelCase,
 } from "@/lib/cases";
 import { CaseStudyContent } from "@/components/cases/CaseStudyContent";
+import { TravelCaseStudyContent } from "@/components/cases/TravelCaseStudyContent";
 import { CaseNavigation } from "@/components/cases/CaseNavigation";
 
 interface CasePageProps {
@@ -43,7 +45,11 @@ export default async function CasePage({ params }: CasePageProps) {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-24">
-      <CaseStudyContent caseStudy={caseStudy} />
+      {isTravelCase(caseStudy) ? (
+        <TravelCaseStudyContent caseStudy={caseStudy} />
+      ) : (
+        <CaseStudyContent caseStudy={caseStudy} />
+      )}
       <CaseNavigation prev={prev} next={next} />
       <div className="mt-10 text-center">
         <TransitionLink
